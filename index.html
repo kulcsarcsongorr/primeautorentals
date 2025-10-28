@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Auto Rentals</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Prime Auto Rentals</h1>
+    </header>
+    <main>
+        <section class="car">
+            <h2>VW Golf</h2>
+            <p>Ár: 15 000 Ft / nap</p>
+        </section>
+
+        <section class="calculator">
+            <h3>Extra km díj kalkulátor</h3>
+            <label for="kmInput">Extra km:</label>
+            <input type="number" id="kmInput" placeholder="Írd be a km-t">
+            <button onclick="calculate()">Számold ki</button>
+            <p id="result"></p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
