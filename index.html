@@ -1,31 +1,32 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prime Auto Rentals</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Autóbérlés kalkulátor</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Prime Auto Rentals</h1>
-    </header>
-    <main>
-        <section class="car">
-            <h2>VW Golf</h2>
-            <p>Ár: 15 000 Ft / nap</p>
-        </section>
+  <div class="container">
+    <h1>Autóbérlés kalkulátor</h1>
 
-        <section class="calculator">
-            <h3>Extra km díj kalkulátor</h3>
-            <label for="kmInput">Extra km:</label>
-            <input type="number" id="kmInput" placeholder="Írd be a km-t">
-            <button onclick="calculate()">Számold ki</button>
-            <p id="result"></p>
-        </section>
-    </main>
+    <label for="category">Válassza ki az autótípust:</label>
+    <select id="category">
+      <option value="kis_auto">Kis autó</option>
+      <option value="kis_busz">Kis busz</option>
+      <option value="kis_busz_plus">Kis busz +</option>
+    </select>
 
-    <script src="script.js"></script>
+    <label for="days">Napok száma:</label>
+    <input type="number" id="days" value="1" min="1">
+
+    <label for="km">Teljes megtett km:</label>
+    <input type="number" id="km" value="0" min="0">
+
+    <button onclick="calculate()">Számítás</button>
+
+    <div class="result" id="result"></div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
