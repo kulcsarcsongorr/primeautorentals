@@ -1,12 +1,15 @@
-document.getElementById('calculateBtn').addEventListener('click', function() {
+function calculate() {
+  // lekérjük az értékeket
   const category = document.getElementById('category').value;
   const days = Number(document.getElementById('days').value);
   const km = Number(document.getElementById('km').value);
 
+  // alap paraméterek
   let basePrice = 0;
-  let includedKm = 400; // km/nap
+  const includedKm = 400; // km/nap
   let extraKmPrice = 0;
 
+  // kategóriák
   switch(category) {
     case 'kis_auto':
       basePrice = 150;
@@ -20,11 +23,16 @@ document.getElementById('calculateBtn').addEventListener('click', function() {
       basePrice = 350;
       extraKmPrice = 1;
       break;
+    default:
+      alert('Válasszon autót!');
+      return;
   }
 
+  // extra km számítás
   const extraKm = Math.max(0, km - (includedKm * days));
   const totalPrice = (basePrice * days) + (extraKm * extraKmPrice);
 
+  // eredmény kiírás
   document.getElementById('result').innerText =
     `Összesen fizetendő: ${totalPrice.toFixed(2)} lej (Extra km: ${extraKm})`;
-});
+}
