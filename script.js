@@ -1,4 +1,4 @@
-function calculate() {
+document.getElementById('calculateBtn').addEventListener('click', function() {
   const category = document.getElementById('category').value;
   const days = Number(document.getElementById('days').value);
   const km = Number(document.getElementById('km').value);
@@ -27,4 +27,4 @@ function calculate() {
 
   document.getElementById('result').innerText =
     `Összesen fizetendő: ${totalPrice.toFixed(2)} lej (Extra km: ${extraKm})`;
-}
+});
